@@ -1,6 +1,8 @@
 <h1 align="center">Hi 👋, I'm Vibhashana Ranhinda</h1>
 <h3 align="center">Unleashing Digital Dreams: Coding Enthusiast & Software Engineering Undergraduate 😉</h3>
 
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=vibhashan&label=Profile%20views&color=0e75b6&style=flat" alt="vibhashan" /> </p>
+
 ### ✍️ Random Dev Quote
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark)
 
