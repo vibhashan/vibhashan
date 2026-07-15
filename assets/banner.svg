@@ -1,0 +1,82 @@
+<svg width="1000" height="200" viewBox="0 0 1000 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#0d1a2b" />
+      <stop offset="100%" stop-color="#05080f" />
+    </radialGradient>
+    <linearGradient id="scanGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0" />
+      <stop offset="50%" stop-color="#00e5ff" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="#00e5ff" stop-opacity="0" />
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00e5ff" stroke-width="0.4" opacity="0.12" />
+    </pattern>
+  </defs>
+
+  <rect width="1000" height="200" fill="url(#bgGrad)" />
+  <rect width="1000" height="200" fill="url(#grid)" />
+
+  <!-- corner HUD brackets -->
+  <g stroke="#00e5ff" stroke-width="2" fill="none" opacity="0.85">
+    <path d="M 14 8 L 14 30 M 14 8 L 36 8" />
+    <path d="M 986 8 L 986 30 M 986 8 L 964 8" />
+    <path d="M 14 192 L 14 170 M 14 192 L 36 192" />
+    <path d="M 986 192 L 986 170 M 986 192 L 964 192" />
+  </g>
+
+  <!-- scanning sweep -->
+  <rect x="0" y="0" width="1000" height="26" fill="url(#scanGrad)">
+    <animate attributeName="y" values="-30;200;-30" dur="6s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- arc reactor ring -->
+  <g transform="translate(95,100)">
+    <circle r="55" fill="none" stroke="#0abdc6" stroke-width="1.4" opacity="0.55"
+      stroke-dasharray="4 6">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="14s"
+        repeatCount="indefinite" />
+    </circle>
+    <circle r="42" fill="none" stroke="#00e5ff" stroke-width="2" stroke-dasharray="70 20 4 20">
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="9s"
+        repeatCount="indefinite" />
+    </circle>
+    <circle r="26" fill="#031018" stroke="#00e5ff" stroke-width="1.5" filter="url(#glow)" />
+    <text x="0" y="7" text-anchor="middle" font-family="Consolas, 'Courier New', monospace"
+      font-size="20" fill="#7dfaff" filter="url(#glow)">&lt;/&gt;</text>
+  </g>
+
+  <!-- name -->
+  <text x="185" y="98" font-family="Consolas, 'Courier New', monospace" font-weight="bold"
+    font-size="34" fill="#eafcff" filter="url(#glow)">
+    VIBHASHANA RANHINDA
+  </text>
+
+  <!-- subtitle typed on -->
+  <text x="185" y="128" font-family="Consolas, 'Courier New', monospace" font-size="15"
+    fill="#00e5ff" opacity="0.9" textLength="560" lengthAdjust="spacingAndGlyphs"> &gt; Software
+    Engineer <tspan fill="#7dfaff">|</tspan> Open-Source Contributor <tspan fill="#7dfaff">|</tspan>
+    Lifelong Learner <animate attributeName="opacity" values="0;1" dur="1.6s" begin="0.3s"
+      fill="freeze" />
+  </text>
+  <rect x="185" y="115" width="8" height="16" fill="#00e5ff">
+    <animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite" />
+    <animate attributeName="x" values="185;745" dur="1.6s" begin="0.3s" fill="freeze" />
+  </rect>
+
+  <!-- status readout -->
+  <text x="815" y="30" font-family="Consolas, 'Courier New', monospace" font-size="12"
+    fill="#00e5ff" opacity="0.85">SYS.STATUS</text>
+  <circle cx="960" cy="26" r="4" fill="#39ff88">
+    <animate attributeName="opacity" values="1;0.25;1" dur="1.4s" repeatCount="indefinite" />
+  </circle>
+  <text x="815" y="46" font-family="Consolas, 'Courier New', monospace" font-size="12"
+    fill="#7dfaff" opacity="0.85">ONLINE</text>
+</svg>
